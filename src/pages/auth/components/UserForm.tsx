@@ -29,19 +29,26 @@ const  submitHandler = () =>{
    
 }
 
-    return <form onSubmit={submitHandler }>
-        <div>
-            <label>Insert username</label>
-            <input type="text" value = {enteredName} onChange={nameChangeHandler}/>
+    return(
+        <div className="m-0 vh-100 row justify-content-center align-items-center">
+        <form onSubmit={submitHandler } className="col-auto">
+        <div className="mb-3">
+            <label className="form-label">Insert username</label>
+            <input type="text" value = {enteredName} onChange={nameChangeHandler} className="form-control" id="exampleInputPassword1"/>
         </div>
 
         <div>
             <label>Insert password</label>
-            <input type="text" value = {enteredPassword} onChange={passwordChangeHandler}/>
+            <input type="password" value = {enteredPassword} onChange={passwordChangeHandler}  className="form-control" id="exampleInputPassword1"/>
         </div>
         
-        <button  >Log in</button>
+        <button className="btn btn-primary"  >Log in</button>
     </form>
+
+    </div> 
+
+    )
+
 }
 export default UserForm
 

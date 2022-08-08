@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import Router from "./routes/Router";
 import { UserProvider } from "./types/UserProvider";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () =>{
   return(

@@ -4,7 +4,7 @@ import UserContext from '../../types/UserContext'
 import NavbarExample from '../Navbar/Navbar'
 
 const Home:FC = () => {
-  const {isLoggedin,performLogout} = useContext(UserContext)
+  const {isLoggedin,performLogout, performLogin} = useContext(UserContext)
   const navigate = useNavigate()
   useEffect(()=>{
     if (!isLoggedin){
