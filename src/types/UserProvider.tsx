@@ -1,10 +1,8 @@
 import {FC,PropsWithChildren,useState} from "react"
 import UserContext from "./UserContext"
 
-interface UserProviderProps{}
-
-export const UserProvider: FC<PropsWithChildren<UserProviderProps>> =({
-        children,
+export const UserProvider: FC<PropsWithChildren> =({
+        children
     }) =>{
     const [isLoggedin,setLogin] = useState<boolean>(false)
     const performLogin = () => setLogin(true)
