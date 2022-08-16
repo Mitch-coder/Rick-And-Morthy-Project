@@ -1,8 +1,8 @@
-import { FC } from "react"
-import UserForm from "./components/UserForm"
+import { FC } from "react";
+import UserForm from "./components/UserForm";
 
-const AuthPage:FC = () =>{
-    return <UserForm/>
-}
+const AuthPage: FC = () => {
+  return <UserForm />;
+};
 
-export default AuthPage
+export { AuthPage };

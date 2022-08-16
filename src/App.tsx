@@ -1,17 +1,15 @@
-import {
-  BrowserRouter
-} from "react-router-dom";
-import Router from "./routes/Router";
-import { UserProvider } from "./types/UserProvider";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter } from "react-router-dom";
+import { Routes } from "./routes";
+import { UserProvider } from "./providers/UserProvider";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const App = () =>{
-  return(
+const App = () => {
+  return (
     <UserProvider>
-       <BrowserRouter>
-        <Router/>
-       </BrowserRouter>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
     </UserProvider>
-  )
-}
-export default App
+  );
+};
+export default App;
