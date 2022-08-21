@@ -1,10 +1,7 @@
 import { FC } from "react";
 
 const Home: FC = () => {
-  return (
-    <>
-      <div>Welcome to the home page</div>
-    </>
+  return (<h1>HOLAAAAAAAAAAAAAAAAAAA</h1>
   );
 };
 

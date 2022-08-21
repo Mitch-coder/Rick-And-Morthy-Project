@@ -15,7 +15,7 @@ const CharacterItem = ({key,name,species,status,image}:character) =>{
           {status}<br/>
         </Card.Text>
       </Card.Body>
-    </Card>
+        </Card>
       </>
       
     )

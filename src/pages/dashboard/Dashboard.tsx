@@ -5,7 +5,6 @@ import { CharacterList } from "../../containers/CharacterList";
 const Dashboard: FC = () => {
   return(
     <>  
-    <CharacterList/>
     </>
     
   ) 
