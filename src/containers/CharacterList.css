@@ -1,0 +1,13 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.card-container{
+    margin:23px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    grid-template-colums: 1fr 1fr 1fr; 
+    gap:18px;
+}

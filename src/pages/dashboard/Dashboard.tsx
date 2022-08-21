@@ -1,6 +1,13 @@
 import React, { FC } from "react";
+import { CharacterList } from "../../containers/CharacterList";
+
 
 const Dashboard: FC = () => {
-  return <div>This is gonna be the dashboard</div>;
+  return(
+    <>  
+    <CharacterList/>
+    </>
+    
+  ) 
 };
 export { Dashboard };

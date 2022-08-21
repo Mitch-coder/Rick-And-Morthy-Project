@@ -23,7 +23,6 @@ const UserForm: FC = () => {
           <label className="form-label">Insert username</label>
           <input type="text" className="form-control" {...username} />
         </div>
-
         <div>
           <label>Insert password</label>
           <input type="password" className="form-control" {...password} />

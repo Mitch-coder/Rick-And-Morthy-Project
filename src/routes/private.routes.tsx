@@ -7,8 +7,8 @@ const PrivateRoutes = () => {
     <Routes>
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/" element={<Layout />}>
-        <Route path="home" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
       </Route>
       <Route path="*" element={<Navigate to="/home" />} />
     </Routes>
