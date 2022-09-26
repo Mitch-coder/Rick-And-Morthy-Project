@@ -5,7 +5,7 @@ const PublicRoutes = () => {
   return (
     <Routes>
       <Route path="/login" element={<AuthPage />} />
-      <Route path="*" element={<Navigate to="/login "/> }/>
+      <Route path="*" element={<Navigate to="/login"/> }/>
     </Routes>
   );
 };

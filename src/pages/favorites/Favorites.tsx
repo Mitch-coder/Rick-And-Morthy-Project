@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 import { CharacterList } from '../../containers/CharacterList'
 
- const About:FC = () => {
+ const Favorites:FC = () => {
   return (
-         <CharacterList/>
+       <></>
   )
 }
 
-export default About
+export default Favorites

@@ -1,7 +1,9 @@
 import { FC } from "react";
+import { CharacterList } from "../../containers/CharacterList";
 
 const Home: FC = () => {
-  return (<h1>HOLAAAAAAAAAAAAAAAAAAA</h1>
+  return (
+    <CharacterList/>
   );
 };
 

@@ -1,2 +1,2 @@
 export * from './useField';
-export * from './useGetCharacters';
+export * from './useCharacters';

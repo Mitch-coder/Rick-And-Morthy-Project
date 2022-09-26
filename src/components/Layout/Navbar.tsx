@@ -1,5 +1,7 @@
-import { Nav } from "react-bootstrap";
+import { Button, Container, Form, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "../../../public/logo.svg";
+import { useField } from "../../hooks";
 
 interface Menu {
   key: string;
@@ -10,18 +12,13 @@ interface Menu {
 const menus: Menu[] = [
   {
     key: "home",
-    href: "/",
+    href: "/home",
     title: "Home",
   },
   {
-    key: "about",
-    href: "/about",
-    title: "About",
-  },
-  {
-    key: "dashboard",
-    href: "/dashboard",
-    title: "Dashboard",
+    key: "favorites",
+    href: "/favorites",
+    title: "Favorites",
   },
 ];
 
@@ -39,22 +36,29 @@ const NavItem = ({ key, href, title }: Menu) => {
 };
 
 const Navbar = () => {
+  const searchInput = useField();
   return (
-    <div className="navbar navbar-dark bg-dark box-shadow">
-      <div className="container d-flex justify-content-between">
+    <div className="navbar navbar-dark bg-dark box-shadow" id="color-nav">
+            <img 
+              src="../../../public/logo.svg"
+              width="50"
+              height="50"
+              className="ms-4"
+              alt="Logo"
+            />
+      <div className="container d-flex justify-content-end">
         {menus.map(NavItem)}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarHeader"
-          aria-controls="navbarHeader"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
       </div>
+      <Form className="d-flex me-4">
+                  <Form.Control
+                    type="search"
+                    placeholder="Search"
+                    className="me-2"
+                    aria-label="Search"
+                    {...searchInput}
+                  />
+                  <Button variant="success">Search</Button>
+                </Form>
     </div>
   );
 };

@@ -1,28 +1,40 @@
-import { character, useGetCharacters } from "../hooks";
+import { useCharacters, useField } from "../hooks";
+import { getCharacter } from "../services/character.service";
 import { CharacterItem } from "./CharacterItem";
-import './CharacterList.css' 
+import "./CharacterList.css";
 
-const API:string ='https://rickandmortyapi.com/api/character'
+// const favoritesCharacters = [6,7]
 
+const CharacterList = () => {
+  const { characters, loading } = useCharacters();
+  const searchInput = useField();
 
-const CharacterList = () =>{
-    const data = useGetCharacters(API)
-    return(
-        <section >
-            <div className="card-container">
-                {data?.map(character =>(
-                 <CharacterItem 
-                        key={character.key}
-                        name={character.name}
-                        status={character.status}
-                        species={character.species} 
-                        image={character.image}
-                />
-                ))}
-            </div>
-        </section>
-    )
-}
+  if (loading) return <>Cargando Personajes de Rick y Morty</>;
 
-export {CharacterList}
+  return (
+    <section>
+      {<input  {...searchInput}/>}
+      <div className="card-container">
+        {characters
+         .filter(character => character.name.toLowerCase().includes(searchInput.value.toLowerCase()))
+        // .filter(character => character.id.includes(character.id))
+        .map((character) => (
+          <CharacterItem
+            id={character.id}
+            key={`character-${character.id}`}
+            name={character.name}
+            status={character.status}
+            species={character.species}
+            image={character.image}
+            onClick={async (id) => {
+              const character = await getCharacter(id);
+              console.log(character);
+            }}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
 
+export { CharacterList };
