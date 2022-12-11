@@ -1,3 +1,4 @@
+import { ChangeEvent, FC } from "react";
 import { useCharacters, useField } from "../hooks";
 import { getCharacter } from "../services/character.service";
 import { CharacterItem } from "./CharacterItem";
@@ -5,15 +6,17 @@ import "./CharacterList.css";
 
 // const favoritesCharacters = [6,7]
 
-const CharacterList = () => {
+
+
+const CharacterList= ()=> {
   const { characters, loading } = useCharacters();
   const searchInput = useField();
 
   if (loading) return <>Cargando Personajes de Rick y Morty</>;
 
+  //{<input  {...searchInput}/>} Esto va debajp del section 
   return (
     <section>
-      {<input  {...searchInput}/>}
       <div className="card-container">
         {characters
          .filter(character => character.name.toLowerCase().includes(searchInput.value.toLowerCase()))

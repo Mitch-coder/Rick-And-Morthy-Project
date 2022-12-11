@@ -1,7 +1,9 @@
 import { Button, Container, Form, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../../public/logo.svg";
-import { useField } from "../../hooks";
+import { CharacterList } from "../../containers/CharacterList";
+import { useCharacters, useField } from "../../hooks";
+
 
 interface Menu {
   key: string;
@@ -35,8 +37,18 @@ const NavItem = ({ key, href, title }: Menu) => {
   );
 };
 
-const Navbar = () => {
-  const searchInput = useField();
+interface Props{
+
+}
+
+const Navbar = ({onChange}:{
+    onChange: React.ChangeEventHandler;
+}) => {
+ const searchInput = useField();
+  const { characters, loading } = useCharacters();
+  
+  if (loading) return <>Cargando Personajes de Rick y Morty</>;
+
   return (
     <div className="navbar navbar-dark bg-dark box-shadow" id="color-nav">
             <img 
@@ -50,12 +62,11 @@ const Navbar = () => {
         {menus.map(NavItem)}
       </div>
       <Form className="d-flex me-4">
-                  <Form.Control
+                  <Form.Control {...searchInput}
                     type="search"
                     placeholder="Search"
                     className="me-2"
                     aria-label="Search"
-                    {...searchInput}
                   />
                   <Button variant="success">Search</Button>
                 </Form>
