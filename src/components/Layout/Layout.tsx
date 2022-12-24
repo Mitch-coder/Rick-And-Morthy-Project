@@ -4,10 +4,9 @@ import { useField } from "../../hooks";
 import { Navbar } from "./Navbar";
 
 const Layout = () => {
-  const searchInput = useField();
   return (
       <>
-      <Navbar onChange={searchInput.onChange}/>
+      <Navbar/>
         <Outlet/>
       </>
   );

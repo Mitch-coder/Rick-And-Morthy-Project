@@ -5,6 +5,7 @@ const useField = (defaultValue = "") => {
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    console.log(value)
     setValue(value);
   };
   

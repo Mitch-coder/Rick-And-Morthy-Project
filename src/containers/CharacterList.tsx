@@ -1,4 +1,5 @@
-import { ChangeEvent, FC } from "react";
+import { ChangeEvent, FC, useContext } from "react";
+import { SearchContext } from "../context";
 import { useCharacters, useField } from "../hooks";
 import { getCharacter } from "../services/character.service";
 import { CharacterItem } from "./CharacterItem";
@@ -9,17 +10,18 @@ import "./CharacterList.css";
 
 
 const CharacterList= ()=> {
-  const { characters, loading } = useCharacters();
-  const searchInput = useField();
+  const { characters, loading, allCharacters } = useCharacters();
+  //const searchResults = useContext(SearchContext)
+  const searchContext = useContext(SearchContext);
 
   if (loading) return <>Cargando Personajes de Rick y Morty</>;
-
-  //{<input  {...searchInput}/>} Esto va debajp del section 
+  
+  console.log(searchContext.query); 
   return (
     <section>
       <div className="card-container">
         {characters
-         .filter(character => character.name.toLowerCase().includes(searchInput.value.toLowerCase()))
+         .filter(character => character.name.toLowerCase().includes(searchContext.query.toLowerCase()))
         // .filter(character => character.id.includes(character.id))
         .map((character) => (
           <CharacterItem

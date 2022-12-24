@@ -1,9 +1,10 @@
+import { ChangeEvent, useContext, useState } from "react";
 import { Button, Container, Form, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../../public/logo.svg";
 import { CharacterList } from "../../containers/CharacterList";
+import { SearchContext, useSearchContext } from "../../context";
 import { useCharacters, useField } from "../../hooks";
-
 
 interface Menu {
   key: string;
@@ -37,39 +38,33 @@ const NavItem = ({ key, href, title }: Menu) => {
   );
 };
 
-interface Props{
+const Navbar = () => {
+  const { searchHandler } = useSearchContext();
 
-}
-
-const Navbar = ({onChange}:{
-    onChange: React.ChangeEventHandler;
-}) => {
- const searchInput = useField();
-  const { characters, loading } = useCharacters();
-  
-  if (loading) return <>Cargando Personajes de Rick y Morty</>;
+  const searchQueryHandler = (e: any) =>
+    searchHandler(e.target.value as string);
 
   return (
     <div className="navbar navbar-dark bg-dark box-shadow" id="color-nav">
-            <img 
-              src="../../../public/logo.svg"
-              width="50"
-              height="50"
-              className="ms-4"
-              alt="Logo"
-            />
+      <img
+        src="../../../public/logo.svg"
+        width="50"
+        height="50"
+        className="ms-4"
+        alt="Logo"
+      />
       <div className="container d-flex justify-content-end">
         {menus.map(NavItem)}
       </div>
       <Form className="d-flex me-4">
-                  <Form.Control {...searchInput}
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="success">Search</Button>
-                </Form>
+        <Form.Control
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          aria-label="Search"
+          onChange={searchQueryHandler}
+        />
+      </Form>
     </div>
   );
 };

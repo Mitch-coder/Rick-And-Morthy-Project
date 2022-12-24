@@ -4,19 +4,21 @@ import { character } from "../models/character";
 
 const useCharacters = () =>{
     const [characters, setCharacters] = useState<character[]>([])
+    const [allCharacters, setAllCharacters] = useState<character[]>([])
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
         const getData = async () => {
             const characters = await getCharacters();
             setCharacters(characters)
+            setAllCharacters(allCharacters)
             setLoading(false);
         };
 
         getData();
     },[]);
     
-    return { characters, loading };
+    return { characters, allCharacters , loading };
 }
 
 export { useCharacters };

@@ -1,6 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "../components";
+import { SearchContext } from "../context";
 import { Favorites, Home } from "../pages";
+import { SearchProvider } from "../providers/SearchProvider";
 
 const PrivateRoutes = () => {
   return (
