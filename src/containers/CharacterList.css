@@ -5,9 +5,10 @@
 }
 .card-container{
     margin:23px;
+    margin-left:40px;
     display:flex;
     flex-wrap:wrap;
-    justify-content: flex-start;
+    justify-content: flex-endt;
     grid-template-colums: 1fr 1fr 1fr; 
     gap:18px;
 }

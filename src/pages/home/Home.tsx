@@ -3,7 +3,7 @@ import { CharacterList } from "../../containers/CharacterList";
 
 const Home: FC = () => {
   return (
-    <CharacterList/>
+    <CharacterList isFavoritePage={false}/>
   );
 };
 
