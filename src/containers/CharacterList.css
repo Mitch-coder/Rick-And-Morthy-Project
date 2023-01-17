@@ -2,6 +2,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 .card-container{
     margin:23px;
@@ -11,4 +12,15 @@
     justify-content: flex-endt;
     grid-template-colums: 1fr 1fr 1fr; 
     gap:18px;
+}
+
+.body{
+    background:
+
+
+}
+
+ .main-container{
+    margin:0;
+    background:black;
 }

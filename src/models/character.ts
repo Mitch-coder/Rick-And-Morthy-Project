@@ -7,17 +7,32 @@ export type characterOriginOrLocation = {
   url: string;
 };
 
-export type character = {
+// export type character ={
+//   id: number;
+//   name: string;
+//   status: characterStatus;
+//   species: string;
+//   // type: string;
+//   // gender: characterGender;
+//   // origin: characterOriginOrLocation;
+//   // location: characterOriginOrLocation;
+//   // image: string;
+//   // episode: string[ ];
+//   // url: string;
+//   // created: string;
+// };
+export interface ICharacter {
   id: number;
   name: string;
   status: characterStatus;
   species: string;
-  type: string;
+  
+  // type: string;
   gender: characterGender;
   origin: characterOriginOrLocation;
-  location: characterOriginOrLocation;
+ // location: characterOriginOrLocation;
   image: string;
-  episode: string[ ];
-  url: string;
+ // episode: string[ ];
+ // url: string;
   created: string;
 };

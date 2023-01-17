@@ -1,10 +1,10 @@
 import { getCharacters } from "../services/character.service";
 import { useEffect, useState } from "react";
-import { character } from "../models/character";
+import { ICharacter } from "../models/character";
 
 const useCharacters = () =>{
-    const [characters, setCharacters] = useState<character[]>([])
-    const [allCharacters, setAllCharacters] = useState<character[]>([])
+    const [characters, setCharacters] = useState<ICharacter[]>([])
+    const [allCharacters, setAllCharacters] = useState<ICharacter[]>([])
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{

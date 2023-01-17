@@ -20,11 +20,11 @@ const UserForm: FC = () => {
     <div className="m-0 vh-100 row justify-content-center align-items-center">
       <form onSubmit={submitHandler} className="col-auto">
         <div className="mb-3">
-          <label className="form-label">Insert username</label>
+          <label className="text-light" >Insert username</label>
           <input type="text" className="form-control" {...username} />
         </div>
-        <div>
-          <label>Insert password</label>
+        <div className="mb-3">
+          <label className="text-light">Insert password</label>
           <input type="password" className="form-control" {...password} />
         </div>
 
