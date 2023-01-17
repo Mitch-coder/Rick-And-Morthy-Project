@@ -28,6 +28,11 @@ const menus: Menu[] = [
     href: "/report",
     title: "Report",
   },
+  {
+    key: "favorite-report",
+    href: "/report/favorite",
+    title: "Favorite Report",
+  },
 ];
 
 const NavItem = ({ key, href, title }: Menu) => {

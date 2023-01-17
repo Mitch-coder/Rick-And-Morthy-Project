@@ -15,8 +15,8 @@ type Props = {
 };
 
 const CharacterItem: FC<Props> = ({ image, name, species, status, onClick, id }) => {
-
   const key = `like-${id}`
+
   const [liked,setLiked]=useState(()=>{
     try {
       const like = localStorage.getItem(key)
@@ -30,7 +30,7 @@ const CharacterItem: FC<Props> = ({ image, name, species, status, onClick, id })
   const onHandleClick = () =>{
     setLocalStorage(!liked)
     onClick(id)
-  }  
+  }
   const setLocalStorage = (value:boolean)=>{
     try {
       localStorage.setItem(key,JSON.stringify(value))

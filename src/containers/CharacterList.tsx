@@ -6,7 +6,7 @@ import { CharacterItem } from "./CharacterItem";
 import "./CharacterList.css";
 import styled from 'styled-components'
 import { useTable } from 'react-table'
-import Table from "./CharacterTable";
+import CharacterTable from "./CharacterTable";
 
 
 // const favoritesCharacters = [6,7]
